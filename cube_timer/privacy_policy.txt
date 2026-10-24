@@ -1,0 +1,177 @@
+PRIVACY POLICY — PLUSTWO TIMER
+
+Effective Date: October 24, 2026
+Last Updated: October 24, 2026
+
+Application Name: PlusTwo Timer
+Privacy Contact Email: staryellowmonkey+feedback@gmail.com
+
+========================================================================
+1. OVERVIEW
+========================================================================
+
+This Privacy Policy explains how PlusTwo Timer ("the App", "we", "us",
+or "our") accesses, collects, uses, stores, and protects information
+when you use the PlusTwo Timer mobile application distributed via Google
+Play and other platforms.
+
+PlusTwo Timer is designed to operate as a privacy-first, offline-capable
+speedcubing stopwatch and multi-column comparison tool. We do not
+automatically collect, transmit, rent, sell, or share any personal or
+sensitive user data with third parties, analytics providers, or
+advertising networks.
+
+========================================================================
+2. INFORMATION WE ACCESS AND STORE
+========================================================================
+
+A. Locally Stored Application Data (On-Device Only)
+---------------------------------------------------
+When you use PlusTwo Timer, the App stores the following operational
+data locally on your device using the operating system's sandboxed
+application storage (Android SharedPreferences / iOS NSUserDefaults):
+
+  - Custom column or round names (e.g., "Round 1", "Round 2")
+  - Recorded and manually entered solve times
+  - Active column and row configuration
+  - Application settings (such as whether Haptic Feedback is enabled)
+
+This data is stored exclusively on your device so your session persists
+between app launches. It is never transmitted off your device by the
+App, and we have no access to it.
+
+B. Optional User-Initiated Feedback (External Email Client)
+-----------------------------------------------------------
+PlusTwo Timer includes an optional "Send Feedback" button inside the
+Settings menu. The App itself does not transmit background network
+requests or emails.
+
+If you voluntarily tap "Send Feedback" -> "Email", the App uses a
+standard "mailto:" link to open your device's external email application
+addressed to staryellowmonkey+feedback@gmail.com. To help us diagnose
+technical issues, the pre-populated email draft includes the following
+non-personal diagnostic information in the message body, which you can
+review, edit, or delete before sending:
+
+  - Application name and version number (e.g., PlusTwo Timer v1.0.4)
+  - Operating system name and version (e.g., Android release and SDK
+    version)
+  - Device manufacturer and model name
+  - A non-identifying cryptographic verification token (generated from
+    a timestamp and random nonce with zero user or device identifiers)
+
+No information is sent unless you explicitly choose to send the email
+from your own email client. If you send us an email, we will receive
+your email address, the message you write, and the diagnostic header
+included in the email body. We use this information solely to respond to
+your inquiry, troubleshoot reported bugs, and improve the App.
+
+C. Information We Do NOT Collect
+--------------------------------
+PlusTwo Timer does NOT collect, access, or track:
+  - Name, physical address, phone number, or account credentials
+  - Precise or coarse geographic location (GPS or network location)
+  - Contacts, calendar, photos, media, microphone, or camera data
+  - Advertising IDs, analytics telemetry, or behavioral tracking profiles
+  - Financial, payment, or health information
+
+========================================================================
+3. DEVICE PERMISSIONS AND PLATFORM CAPABILITIES
+========================================================================
+
+PlusTwo Timer requests only the minimum system capabilities required for
+its core features:
+
+  - Vibration / Haptic Feedback (android.permission.VIBRATE):
+    Used solely on-device to provide optional tactile vibration feedback
+    when arming, starting, and stopping the stopwatch timer. You can
+    disable haptic feedback at any time in the App's Settings menu.
+
+  - Email Intent Query (android.intent.action.SENDTO / mailto:):
+    Used solely to check for and open your external email application
+    when you explicitly tap the "Send Feedback" button in Settings.
+
+========================================================================
+4. DATA SHARING AND THIRD-PARTY DISCLOSURES
+========================================================================
+
+  - We do NOT share, sell, rent, or trade any user data with third
+    parties.
+  - The App contains no third-party advertising SDKs, analytics SDKs, or
+    social media trackers.
+  - If you voluntarily send us a feedback email, your email is processed
+    through standard email infrastructure (Gmail / Google Workspace) and
+    is accessed only by the developer for support and quality assurance
+    purposes. We may only disclose information if strictly required to
+    do so by applicable law or valid legal process.
+
+========================================================================
+5. DATA RETENTION AND DELETION POLICY
+========================================================================
+
+A. On-Device Timer & Session Data
+---------------------------------
+All solve times, round names, and preferences remain on your device
+until you choose to remove them. You can delete this data at any time
+by:
+  1. Tapping any solve cell or column to delete individual times or
+     columns inside the App;
+  2. Tapping the "Clear All" button in the top bar of the App;
+  3. Clearing the App's storage/data in your device's system settings; or
+  4. Uninstalling PlusTwo Timer from your device, which permanently
+     removes all locally stored application data.
+
+B. Voluntary Support & Feedback Emails
+--------------------------------------
+If you have voluntarily sent a feedback or support email to us, we
+retain the correspondence only as long as necessary to resolve your
+inquiry and maintain quality assurance records. You may request complete
+deletion of your feedback email and email address at any time by
+contacting us at:
+
+  staryellowmonkey+feedback@gmail.com
+
+Upon receiving a deletion request, we will permanently delete your email
+and associated support records within 30 days.
+
+========================================================================
+6. DATA SECURITY
+========================================================================
+
+All session and timer data created in PlusTwo Timer is stored locally
+within the operating system's private, sandboxed application directory
+on your device. When you choose to send optional feedback via your
+external email provider, transmission security (such as TLS encryption
+in transit) is handled by your configured email client and email
+service provider.
+
+========================================================================
+7. CHILDREN'S PRIVACY
+========================================================================
+
+PlusTwo Timer is a general-audience utility application and does not
+knowingly collect any personal information from children under the age
+of 13 (or the applicable age of digital consent in your jurisdiction).
+If a parent or guardian believes that a child has sent personal
+information to us via a support email, please contact us at
+staryellowmonkey+feedback@gmail.com and we will promptly delete the
+information.
+
+========================================================================
+8. CHANGES TO THIS PRIVACY POLICY
+========================================================================
+
+We may update this Privacy Policy from time to time to reflect changes
+in the App's functionality or legal and regulatory requirements. Any
+updates will be posted at the public URL where this Privacy Policy is
+hosted, with an updated "Last Updated" date at the top of this document.
+
+========================================================================
+9. CONTACT US (PRIVACY POINT OF CONTACT)
+========================================================================
+
+If you have any questions, concerns, or requests regarding this Privacy
+Policy or how PlusTwo Timer handles data, please contact us at:
+
+  App: PlusTwo Timer
+  Email: staryellowmonkey+feedback@gmail.com
