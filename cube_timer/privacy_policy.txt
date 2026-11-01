@@ -1,7 +1,7 @@
 PRIVACY POLICY — PLUSTWO TIMER
 
 Effective Date: October 24, 2026
-Last Updated: October 24, 2026
+Last Updated: October 31, 2026
 
 Application Name: PlusTwo Timer
 Privacy Contact Email: staryellowmonkey+feedback@gmail.com
@@ -32,7 +32,7 @@ data locally on your device using the operating system's sandboxed
 application storage (Android SharedPreferences / iOS NSUserDefaults):
 
   - Custom column or round names (e.g., "Round 1", "Round 2")
-  - Recorded and manually entered solve times
+  - Recorded and manually entered solve times and penalties (+2, DNF)
   - Active column and row configuration
   - Application settings (such as whether Haptic Feedback is enabled)
 
@@ -53,7 +53,7 @@ technical issues, the pre-populated email draft includes the following
 non-personal diagnostic information in the message body, which you can
 review, edit, or delete before sending:
 
-  - Application name and version number (e.g., PlusTwo Timer v1.0.4)
+  - Application name and version number (e.g., PlusTwo Timer v1.0.15)
   - Operating system name and version (e.g., Android release and SDK
     version)
   - Device manufacturer and model name
