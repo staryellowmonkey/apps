@@ -1,0 +1,218 @@
+PRIVACY POLICY — PANDA POCKET
+
+Effective Date: October 29, 2026
+Last Updated: November 3, 2026
+
+Application Name: Panda Pocket
+Privacy Contact Email: staryellowmonkey+feedback@gmail.com
+
+========================================================================
+1. OVERVIEW
+========================================================================
+
+This Privacy Policy explains how Panda Pocket ("the App", "we", "us",
+or "our") accesses, collects, uses, stores, and protects information
+when you use the Panda Pocket mobile application distributed via Google
+Play and other platforms.
+
+Panda Pocket is a privacy-focused virtual money ledger designed for
+parents to track allowance, chores, virtual checking and savings
+balances, and savings goals on their device. Panda Pocket does not
+connect to any bank or financial institution, does not process real
+currency, and does not sell, rent, or share any user data with
+advertising networks or data brokers.
+
+========================================================================
+2. INFORMATION WE ACCESS AND STORE
+========================================================================
+
+A. On-Device Storage & Automatic OS Device Backup
+-------------------------------------------------
+The App stores operational ledger data locally inside the operating
+system's private, sandboxed application directory using a normalized
+local SQLite database (`sqflite`) and platform preferences
+(`SharedPreferences` / `NSUserDefaults`):
+
+  - Selected currency symbol and optional salted HMAC-SHA256 hash of
+    your 4-digit Parent PIN lock (your plaintext PIN is never stored)
+  - Configured Checking and Savings virtual interest rates, payout
+    period settings, and weekly/monthly chore payout schedules
+  - Child profile display names, selected mascot avatars, virtual
+    Checking and Savings balances, savings goal titles/targets, and
+    daily/weekly/monthly chore titles, rewards, and completion records
+  - Recorded virtual transactions (deposits, expenses, transfers,
+    chore batch payouts, automatic interest entries, transaction notes,
+    and annulment reasons)
+  - When optional Parent Cloud Sync is used, local per-vault snapshots
+    (stripped of local PIN and session secrets) and remembered shared
+    vault references (including the 4-character Family Invite Code) are
+    cached in `SharedPreferences` to allow seamless switching between
+    your personal vault and accepted shared vaults
+
+On Android and iOS devices where operating-system device backup
+(Google Play / Google One Auto Backup or Apple iCloud Backup) is
+enabled by the user, the operating system automatically backs up your
+local SQLite ledger database (`panda_pocket_ledger.db`) and app
+preferences (`FlutterSharedPreferences.xml`) to your personal OS backup
+account for device recovery without requiring in-app sign-in.
+
+B. Optional Multi-Parent Cloud Sync (Google Sign-In & Firebase Firestore)
+-------------------------------------------------------------------------
+If a parent voluntarily chooses to enable multi-parent Cloud Sync in the
+"Family Sync & Child Device Setup" menu, the App uses authenticated
+Google Sign-In (`google_sign_in` and `firebase_auth`) and Google Cloud
+Firestore (`cloud_firestore`) to synchronize your household vault across
+authorized parent devices:
+
+  - Parent Account Identifiers & Dual-Consent Protection: Your verified
+    Google Account email address and any co-parent Google Account email
+    addresses you explicitly authorize. Joining a shared family vault
+    requires dual consent: (1) the primary vault owner must pre-authorize
+    the co-parent's email address, and (2) the co-parent must enter the
+    4-character Family Invite Code.
+  - Synchronized Household Vault: Your currency symbol, interest and
+    savings account settings, child profile first names/nicknames,
+    mascot avatars, virtual balances, savings goals, chore definitions
+    and completion records, and virtual transaction history.
+  - Security Exclusion: Your local Parent PIN hash and local view-mode
+    state are stripped and never uploaded to Cloud Firestore.
+
+All Cloud Firestore communication is encrypted in transit via HTTPS/TLS
+and restricted by Firebase Security Rules to authenticated, verified
+Google Accounts listed in your household's authorized member list.
+
+C. Optional User-Initiated Feedback (External Email Client)
+-----------------------------------------------------------
+Panda Pocket includes an optional "Send Feedback" option inside the
+Household Settings menu. If you voluntarily tap "Send Feedback" ->
+"Email", the App uses a standard "mailto:" link to open your device's
+external email application addressed to
+staryellowmonkey+feedback@gmail.com. To help us diagnose technical
+issues, the pre-populated email draft includes non-personal diagnostic
+metadata (App version, OS version, device model, and a non-identifying
+verification token) which you can review, edit, or delete before
+sending.
+
+D. Information We Do NOT Collect
+--------------------------------
+Panda Pocket does NOT collect, access, or track:
+  - Children's email addresses, phone numbers, or personal identifiers
+  - Real bank accounts, credit cards, or real-world financial data
+  - Precise or coarse geographic location (GPS or network location)
+  - Contacts, calendar, photos, media, microphone, or camera data
+  - Advertising IDs, analytics telemetry, or behavioral tracking profiles
+
+========================================================================
+3. DEVICE PERMISSIONS AND PLATFORM CAPABILITIES
+========================================================================
+
+Panda Pocket requests only the minimum system capabilities required for
+its features:
+
+  - Internet Access (`android.permission.INTERNET`):
+    Used only when you explicitly sign in with Google and enable
+    optional Firebase Cloud Firestore multi-parent synchronization.
+  - Email Intent Query (`android.intent.action.SENDTO` / `mailto:`):
+    Used solely to open your external email application when you
+    explicitly tap the "Send Feedback" option in Settings.
+
+========================================================================
+4. DATA SHARING AND THIRD-PARTY SERVICE PROVIDERS
+========================================================================
+
+  - We do NOT sell, rent, or trade any user data with third parties.
+  - The App contains no third-party advertising SDKs, analytics SDKs, or
+    social media trackers.
+  - When you opt into Cloud Sync, Google Firebase (`Firebase Authentication`
+    and `Cloud Firestore`, operated by Google LLC) acts as our cloud
+    infrastructure processor solely to authenticate your Google Account
+    and store your synchronized household ledger.
+
+========================================================================
+5. DATA RETENTION AND DELETION POLICY
+========================================================================
+
+A. On-Device Ledger Data
+------------------------
+All household profiles, virtual balances, savings goals, and transaction
+notes stored locally on your device remain until you remove them. You
+can delete local data at any time by:
+  1. Editing or removing individual child profiles or goals inside the
+     App;
+  2. Clearing the App's storage/data in your device's system settings; or
+  3. Uninstalling Panda Pocket from your device, which removes all
+     locally stored SQLite and preference data on the device (and you
+     can manage or delete OS-level Google Play / Google One or iCloud
+     app backups in your device's system backup settings).
+
+B. Cloud Sync Data (In-App & Email Deletion)
+--------------------------------------------
+If you have enabled optional Cloud Sync, you can permanently delete your
+household document from Firebase Cloud Firestore (or unlink your
+co-parent account) at any time:
+  1. Directly inside the App: Open the "Family Sync" sheet (`cloud_sync`
+     icon in the top bar) and tap "Delete Cloud Data". If you are the
+     household owner, this immediately deletes the entire household
+     record and its invite-code lookup entry from Cloud Firestore,
+     purges all local cached vault snapshots and accepted-vault
+     references, and signs out your Google Account. If you joined as an
+     invited co-parent, you may either tap "Leave" under "Active &
+     Available Family Vaults" (to unlink from a shared vault while
+     keeping your own personal vault) or tap "Delete Cloud Data" (which
+     removes your email address from the shared household's authorized
+     member list, clears local cached vault snapshots, and signs out your
+     Google Account without deleting the primary owner's household vault).
+  2. By Email Request: You may also request deletion of your cloud
+     household data or removal of your account without using the App by
+     emailing staryellowmonkey+feedback@gmail.com from your registered
+     Google Account email address. We will permanently process the
+     deletion request within 30 days.
+
+C. Voluntary Support & Feedback Emails
+--------------------------------------
+If you have voluntarily sent a feedback or support email to us, you may
+request complete deletion of your email correspondence at any time by
+contacting staryellowmonkey+feedback@gmail.com.
+
+========================================================================
+6. DATA SECURITY
+========================================================================
+
+  - On-Device Storage: Stored in the operating system's sandboxed
+    application directory (`sqflite` SQLite database). Any configured
+    Parent PIN is hashed using salted HMAC-SHA256 (`PinSecurity`).
+  - Cloud Sync Storage: Encrypted in transit via TLS/HTTPS and at rest
+    by Google Cloud Firestore, governed by authenticated Firebase
+    Security Rules.
+
+========================================================================
+7. CHILDREN'S PRIVACY
+========================================================================
+
+Panda Pocket is a parent-managed household ledger application. We do not
+knowingly collect any personal information from children under the age
+of 13 (or the applicable age of digital consent in your jurisdiction).
+Child Mode is a local read-only display lock on the device and does not
+solicit or transmit children's email addresses or personal identifiers.
+If a parent or guardian believes that a child has submitted personal
+information to us, please contact us at
+staryellowmonkey+feedback@gmail.com and we will promptly delete it.
+
+========================================================================
+8. CHANGES TO THIS PRIVACY POLICY
+========================================================================
+
+We may update this Privacy Policy from time to time to reflect changes
+in the App's functionality or legal requirements. Any updates will be
+posted at the public URL where this Privacy Policy is hosted, with an
+updated "Last Updated" date at the top of this document.
+
+========================================================================
+9. CONTACT US (PRIVACY POINT OF CONTACT)
+========================================================================
+
+If you have any questions, concerns, or deletion requests regarding this
+Privacy Policy or how Panda Pocket handles data, please contact us at:
+
+  App: Panda Pocket
+  Email: staryellowmonkey+feedback@gmail.com
