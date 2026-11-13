@@ -1,7 +1,7 @@
 PRIVACY POLICY — PANDA POCKET
 
 Effective Date: October 29, 2026
-Last Updated: November 3, 2026
+Last Updated: November 12, 2026
 
 Application Name: Panda Pocket
 Privacy Contact Email: staryellowmonkey+feedback@gmail.com
@@ -45,9 +45,11 @@ local SQLite database (`sqflite`) and platform preferences
     and annulment reasons)
   - When optional Parent Cloud Sync is used, local per-vault snapshots
     (stripped of local PIN and session secrets) and remembered shared
-    vault references (including the 4-character Family Invite Code) are
-    cached in `SharedPreferences` to allow seamless switching between
-    your personal vault and accepted shared vaults
+    vault references are cached in `SharedPreferences` to allow seamless
+    switching between your personal vault and accepted shared vaults
+  - When optional Google Drive Sheet Backup is enabled by a parent, the
+    spreadsheet ID and worksheet tab metadata for the backup sheet are
+    cached in `SharedPreferences`
 
 On Android and iOS devices where operating-system device backup
 (Google Play / Google One Auto Backup or Apple iCloud Backup) is
@@ -56,32 +58,61 @@ local SQLite ledger database (`panda_pocket_ledger.db`) and app
 preferences (`FlutterSharedPreferences.xml`) to your personal OS backup
 account for device recovery without requiring in-app sign-in.
 
-B. Optional Multi-Parent Cloud Sync (Google Sign-In & Firebase Firestore)
--------------------------------------------------------------------------
+B. Optional Multi-Parent Cloud Sync & Anonymous Kid Device Linking
+------------------------------------------------------------------
 If a parent voluntarily chooses to enable multi-parent Cloud Sync in the
 "Family Sync & Child Device Setup" menu, the App uses authenticated
-Google Sign-In (`google_sign_in` and `firebase_auth`) and Google Cloud
-Firestore (`cloud_firestore`) to synchronize your household vault across
-authorized parent devices:
+Google Sign-In (`google_sign_in` and `firebase_auth`), Firebase App
+Check (`firebase_app_check`), and Google Cloud Firestore
+(`cloud_firestore`) to synchronize your household vault across
+authorized parent devices and optional read-only kid devices:
 
   - Parent Account Identifiers & Dual-Consent Protection: Your verified
     Google Account email address and any co-parent Google Account email
     addresses you explicitly authorize. Joining a shared family vault
     requires dual consent: (1) the primary vault owner must pre-authorize
     the co-parent's email address, and (2) the co-parent must enter the
-    4-character Family Invite Code.
+    inviting parent's email address.
+  - Anonymous Single-Use Kid Code Linking (Read-Only): Parents can
+    optionally link a child's device in read-only mode using the
+    parent's email address and a single-use 6-character Kid Code. The
+    child's device connects via Firebase Anonymous Authentication
+    (`signInAnonymously()`) without ever asking for or collecting a
+    child's email address or Google Account.
   - Synchronized Household Vault: Your currency symbol, interest and
     savings account settings, child profile first names/nicknames,
     mascot avatars, virtual balances, savings goals, chore definitions
-    and completion records, and virtual transaction history.
+    and completion records, linked read-only device labels, and virtual
+    transaction history (stored using zlib-compressed ledger payloads to
+    minimize cloud storage footprint).
   - Security Exclusion: Your local Parent PIN hash and local view-mode
     state are stripped and never uploaded to Cloud Firestore.
 
 All Cloud Firestore communication is encrypted in transit via HTTPS/TLS
 and restricted by Firebase Security Rules to authenticated, verified
-Google Accounts listed in your household's authorized member list.
+Google Accounts listed in your household's authorized member list (and
+read-only access for anonymous kid device UIDs explicitly linked via a
+single-use Kid Code).
 
-C. Optional User-Initiated Feedback (External Email Client)
+C. Optional Write-Only Google Drive Sheet Backup (`drive.file` Scope)
+---------------------------------------------------------------------
+Parents who are signed in with Google can optionally enable the
+"Google Drive Sheet Backup" toggle in the Sync menu (OFF by default).
+When enabled by the parent:
+  - The App requests the narrow OAuth 2.0 scope
+    `https://www.googleapis.com/auth/drive.file`, which grants access
+    solely to the single spreadsheet file (`Panda Pocket Backup`)
+    created by Panda Pocket in the parent's Google Drive.
+  - The App performs write-only updates via the Google Sheets API
+    (`https://sheets.googleapis.com/v4/spreadsheets`) to maintain one
+    worksheet tab per child containing their recorded Activity & Notes
+    (`Date`, `Note`, `Account`, `Category`, `Amount`, `Status`). The App
+    never reads or accesses any other files in your Google Drive.
+  - Panda Pocket's use and transfer of information received from Google
+    APIs to any other app adheres to the Google API Services User Data
+    Policy, including the Limited Use requirements.
+
+D. Optional User-Initiated Feedback (External Email Client)
 -----------------------------------------------------------
 Panda Pocket includes an optional "Send Feedback" option inside the
 Household Settings menu. If you voluntarily tap "Send Feedback" ->
@@ -93,7 +124,7 @@ metadata (App version, OS version, device model, and a non-identifying
 verification token) which you can review, edit, or delete before
 sending.
 
-D. Information We Do NOT Collect
+E. Information We Do NOT Collect
 --------------------------------
 Panda Pocket does NOT collect, access, or track:
   - Children's email addresses, phone numbers, or personal identifiers
@@ -148,14 +179,17 @@ can delete local data at any time by:
 B. Cloud Sync Data (In-App & Email Deletion)
 --------------------------------------------
 If you have enabled optional Cloud Sync, you can permanently delete your
-household document from Firebase Cloud Firestore (or unlink your
-co-parent account) at any time:
+household document (including its compressed cloud ledger payload) from
+Firebase Cloud Firestore (or unlink your co-parent account) at any time:
   1. Directly inside the App: Open the "Family Sync" sheet (`cloud_sync`
      icon in the top bar) and tap "Delete Cloud Data". If you are the
      household owner, this immediately deletes the entire household
      record and its invite-code lookup entry from Cloud Firestore,
      purges all local cached vault snapshots and accepted-vault
-     references, and signs out your Google Account. If you joined as an
+     references, and signs out your Google Account. (If you also
+     enabled the optional Google Drive Sheet Backup, the `Panda Pocket
+     Backup` spreadsheet in your personal Google Drive remains under your
+     control until you remove it in Google Drive.) If you joined as an
      invited co-parent, you may either tap "Leave" under "Active &
      Available Family Vaults" (to unlink from a shared vault while
      keeping your own personal vault) or tap "Delete Cloud Data" (which
@@ -192,8 +226,10 @@ contacting staryellowmonkey+feedback@gmail.com.
 Panda Pocket is a parent-managed household ledger application. We do not
 knowingly collect any personal information from children under the age
 of 13 (or the applicable age of digital consent in your jurisdiction).
-Child Mode is a local read-only display lock on the device and does not
-solicit or transmit children's email addresses or personal identifiers.
+Child Mode is a read-only display lock (available locally on a parent's
+device or on a child's device via an anonymous single-use Kid Code) and
+does not solicit or transmit children's email addresses, Google
+Accounts, or personal identifiers.
 If a parent or guardian believes that a child has submitted personal
 information to us, please contact us at
 staryellowmonkey+feedback@gmail.com and we will promptly delete it.
