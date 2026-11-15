@@ -1,0 +1,194 @@
+PRIVACY POLICY — PANTS PARKOUR
+
+Effective Date: November 15, 2026
+Last Updated: November 15, 2026
+
+Application Name: Pants Parkour
+Privacy Contact Email: staryellowmonkey+feedback@gmail.com
+
+========================================================================
+1. OVERVIEW
+========================================================================
+
+This Privacy Policy explains how Pants Parkour ("the App", "we", "us",
+or "our") accesses, collects, uses, stores, and protects information
+when you use the Pants Parkour mobile game distributed via Google Play
+and other platforms.
+
+Pants Parkour is designed as a privacy-first, completely offline game
+for players of all ages. We do not collect, transmit, rent, sell, or
+share any personal or sensitive user data with third parties, analytics
+providers, or advertising networks.
+
+========================================================================
+2. INFORMATION WE ACCESS AND STORE
+========================================================================
+
+A. Locally Stored Game Data (On-Device Only)
+--------------------------------------------
+When you play Pants Parkour, the App stores the following gameplay
+progress and preferences locally on your device using the operating
+system's sandboxed application storage (Android SharedPreferences / iOS
+NSUserDefaults):
+
+  - Highest cleared level (Levels 1 through 5)
+  - Selected and unlocked cosmetic pants styles (e.g., Sky Denim up to
+    Starry Purple)
+  - Total completed runs count
+  - In-game preferences (such as whether Haptic Vibration is enabled)
+
+This data stays exclusively on your device so your unlocked pants styles
+and preferences persist between sessions. The App requests no network or
+internet permissions, never transmits gameplay data off your device, and
+we have no access to it.
+
+B. Optional Adult-Gated Feedback (External Email Client)
+--------------------------------------------------------
+Pants Parkour includes an optional "Send Feedback" option inside the
+Settings menu. The App itself does not make background network requests
+or send emails automatically.
+
+To protect younger players, tapping "Send Feedback" displays an "Adult
+Check" arithmetic challenge. Only after an adult solves this check does
+the App open a standard "mailto:" link in your device's external email
+application addressed to staryellowmonkey+feedback@gmail.com. To help
+diagnose technical issues, the pre-populated email draft includes the
+following non-personal diagnostic header in the message body, which you
+can inspect, edit, or delete before deciding whether to send:
+
+  - Application name and version number (e.g., Pants Parkour v1.0.0)
+  - Operating system name and version
+  - Device manufacturer and model name
+  - A non-identifying cryptographic verification token (generated from
+    a timestamp and random nonce with zero user or device identifiers)
+
+No information leaves your device unless an adult explicitly chooses to
+send the email from their own email client. If you voluntarily send us a
+support email, we receive your email address, the message you write, and
+the diagnostic header in that email solely to respond to your inquiry,
+troubleshoot bugs, and improve the App.
+
+C. Information We Do NOT Collect
+--------------------------------
+Pants Parkour does NOT collect, access, or track:
+  - Name, physical address, phone number, or account credentials
+  - Precise or coarse geographic location (GPS or network location)
+  - Contacts, calendar, photos, media, microphone, or camera data
+  - Advertising IDs, analytics telemetry, or behavioral profiles
+  - Financial, payment, or health information
+
+========================================================================
+3. DEVICE PERMISSIONS AND PLATFORM CAPABILITIES
+========================================================================
+
+Pants Parkour requests only the minimal system capabilities needed for
+offline gameplay and optional adult-gated support emails:
+
+  - Vibration / Haptic Feedback (android.permission.VIBRATE):
+    Used solely on-device for optional tactile vibration feedback during
+    jumps, rail grinds, and bumps. You can turn off Haptic Vibration at
+    any time in the Settings dialog.
+
+  - Email Intent Query (android.intent.action.SENDTO / VIEW for
+    mailto:):
+    Used solely to locate and open your device's external email client
+    when an adult explicitly taps "Send Feedback" in Settings and passes
+    the Adult Check prompt.
+
+Pants Parkour does NOT request internet access permissions or Advertising
+ID permissions.
+
+========================================================================
+4. DATA SHARING AND THIRD-PARTY DISCLOSURES
+========================================================================
+
+  - We do NOT share, sell, rent, or trade any user data with third
+    parties.
+  - The App contains zero third-party advertising SDKs, analytics SDKs,
+    crash reporters, or social trackers.
+  - If an adult voluntarily sends a feedback email, that correspondence
+    is processed through standard email infrastructure (Gmail / Google
+    Workspace) and is accessed only by the developer for support and
+    quality assurance. We may only disclose information if strictly
+    required by applicable law or valid legal process.
+
+========================================================================
+5. DATA RETENTION AND DELETION POLICY
+========================================================================
+
+A. On-Device Gameplay Data
+--------------------------
+All unlocked levels, pants selections, run counters, and haptic settings
+remain exclusively on your device until you choose to clear them. You
+can delete this data at any time by:
+  1. Opening Settings inside Pants Parkour and tapping "Reset Progress"
+     (with confirmation) to reset unlocked levels, pants styles, and run
+     history to initial defaults;
+  2. Clearing the App's storage/data in your device's system settings;
+     or
+  3. Uninstalling Pants Parkour from your device, which permanently
+     removes all locally stored application data.
+
+B. Voluntary Support & Feedback Emails
+--------------------------------------
+If an adult has voluntarily sent a feedback or support email to us, we
+retain the correspondence only as long as needed to resolve the inquiry
+and maintain quality assurance records. You may request permanent
+deletion of your email and associated support record at any time by
+contacting:
+
+  staryellowmonkey+feedback@gmail.com
+
+Upon receiving a deletion request, we will permanently delete your email
+and associated support records within 30 days.
+
+========================================================================
+6. DATA SECURITY
+========================================================================
+
+All game progression and settings created in Pants Parkour are stored
+locally within the operating system's sandboxed application storage on
+your device. When an adult chooses to send optional feedback through
+their external email client, transport security (such as TLS encryption
+in transit) is provided by their email client and email service
+provider.
+
+========================================================================
+7. CHILDREN'S PRIVACY (COPPA, GDPR-K & GOOGLE PLAY FAMILIES)
+========================================================================
+
+Pants Parkour is designed to be safe and enjoyable for players of all
+ages, including children under the age of 13 (or the applicable age of
+digital consent in your jurisdiction).
+
+  - The App does not require user accounts, sign-in, or personal
+    information, and collects zero personal data, analytics, or
+    persistent device identifiers.
+  - The App contains no third-party advertisements or external web
+    browsing links during gameplay.
+  - Optional external feedback ("mailto:") is protected behind a neutral
+    "Adult Check" arithmetic parental gate so children do not leave the
+    App without adult involvement.
+
+If a parent or guardian believes a child has voluntarily sent personal
+information via support email, please contact us at
+staryellowmonkey+feedback@gmail.com and we will promptly delete it.
+
+========================================================================
+8. CHANGES TO THIS PRIVACY POLICY
+========================================================================
+
+We may update this Privacy Policy from time to time to reflect updates
+to the App or legal and regulatory requirements. Any revisions will be
+posted at the public URL where this Privacy Policy is hosted, with an
+updated "Last Updated" date at the top of this document.
+
+========================================================================
+9. CONTACT US (PRIVACY POINT OF CONTACT)
+========================================================================
+
+If you have any questions, concerns, or deletion requests regarding
+this Privacy Policy or how Pants Parkour handles data, please contact:
+
+  App: Pants Parkour
+  Email: staryellowmonkey+feedback@gmail.com
